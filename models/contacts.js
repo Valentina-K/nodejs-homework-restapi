@@ -25,7 +25,7 @@ const removeContact = async (contactId) => {
     return null;
   }
   
-  const newContacts = contacts.filter(contact => contact.id !== deleteIndex);
+  const newContacts = contacts.filter((_,index) => index !== deleteIndex);
   await fs.writeFile(filePath, JSON.stringify(newContacts));
   return contacts[deleteIndex];
 }
@@ -44,7 +44,7 @@ const updateContact = async (contactId, body) => {
   if (updateIndex === -1) {
     return null;
   }
-  contacts[updateIndex] = { ...body, contactId };
+  contacts[updateIndex] = { ...body, id:contactId };
   await fs.writeFile(filePath, JSON.stringify(contacts));
   return contacts[updateIndex];
 }
