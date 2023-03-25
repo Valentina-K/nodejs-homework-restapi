@@ -6,4 +6,4 @@ const schema = Joi.object({
   phone: Joi.string().required(),
 })
 
-module.export = schema;
+module.exports = schema;
