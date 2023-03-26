@@ -9,7 +9,7 @@ const updateContact = async (req, res, next) => {
       error.status = 404;
       throw error;
     }
-    res.json(result);
+    res.status(200).json(result);
   } catch (error) {    
     next(error);
   }
