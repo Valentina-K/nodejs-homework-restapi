@@ -19,7 +19,7 @@ router.put("/:contactId", isValidId(), isEmptyBody(), ctrl.updateById);
 router.patch(
   "/:contactId/favorite",
   isValidId(),
-  isEmptyBody(),
+  isEmptyBody("favorite"),
   validation(schemas.favoriteSchema),
   ctrl.updateStatusContact
 );
