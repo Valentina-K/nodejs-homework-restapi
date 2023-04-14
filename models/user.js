@@ -29,13 +29,13 @@ userSchema.post("save", (error, data, next) => {
 });
 const User = model("user", userSchema);
 
-const registerSchema = Joi.object({
+const authSchema = Joi.object({
   email: Joi.string().email().required(),
   password: Joi.string().required(),
 });
 
 const schemas = {
-  registerSchema,
+  authSchema,
 };
 
 module.exports = {
