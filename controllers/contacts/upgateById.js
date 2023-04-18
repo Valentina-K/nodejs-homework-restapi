@@ -1,3 +1,4 @@
+const HttpError = require("../../helpers/httperror");
 const { Contact } = require("../../models/contact");
 
 const updateContact = async (req, res, next) => {
@@ -7,9 +8,7 @@ const updateContact = async (req, res, next) => {
       new: true,
     });
     if (!result) {
-      const error = new Error("Not found");
-      error.status = 404;
-      throw error;
+      throw HttpError(404, "Not found");
     }
     res.status(200).json(result);
   } catch (error) {

@@ -8,9 +8,6 @@ const register = async (req, res, next) => {
     const user = await User.findOne({ email });
     if (user) {
       throw HttpError(409, "Email in use");
-      /* const error = new Error("Email in use");
-      error.status = 409;
-      throw error; */
     }
     const hashPassword = await bcrypt.hash(password, 10);
     const result = await User.create({ ...req.body, password: hashPassword });
