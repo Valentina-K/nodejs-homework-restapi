@@ -20,6 +20,7 @@ const contactSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "user",
   },
+  avatarURL: String,
 });
 
 contactSchema.post("save", (error, data, next) => {
