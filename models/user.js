@@ -19,6 +19,7 @@ const userSchema = new Schema({
     type: String,
     default: null,
   },
+  avatarURL: String,
 });
 
 userSchema.post("save", (error, data, next) => {
