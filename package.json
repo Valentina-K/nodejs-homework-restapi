@@ -9,8 +9,7 @@
     "lint:fix": "eslint --fix **/*.js",
     "test": "jest"
   },
-  "dependencies": {
-    "bcrypt": "^5.1.0",
+  "dependencies": {    
     "cors": "2.8.5",
     "cross-env": "7.0.3",
     "dotenv": "^16.0.3",
