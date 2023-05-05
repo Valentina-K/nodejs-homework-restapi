@@ -4,7 +4,7 @@ const validation = (schema) => {
     if (error) {
       const { key } = error.details[0].context;
       error.status = 400;
-      error.message = `missing required ${key}`;
+      error.message = `missing required field ${key}`;
       next(error);
     }
     next();
